@@ -371,6 +371,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9188640894721932697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,14 +394,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778ce8bd3a17b47a79b2d7d819dc9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toast: {fileID: 370995503760159966, guid: 8cfb05fc7724f4c4c981094e1b34562f, type: 3}
   usernameText: {fileID: 5336640035525681629}
   userTrophyText: {fileID: 8221878287723671758}
   RankingNumberText: {fileID: 8429072938738611358}
   RankingNumberImage: {fileID: 3601637832568212393}
-  Sprite1: {fileID: 21300000, guid: 1411dedc31d4f4fd7985323245c27501, type: 3}
-  Sprite2: {fileID: 21300000, guid: ec26dcaa43f3f49f5ab9ffe3ae8d90cb, type: 3}
-  Sprite3: {fileID: 21300000, guid: 694f59607c0e544b5bc5898ba2f14a09, type: 3}
+  _sprite:
+  - {fileID: 21300000, guid: 1411dedc31d4f4fd7985323245c27501, type: 3}
+  - {fileID: 21300000, guid: ec26dcaa43f3f49f5ab9ffe3ae8d90cb, type: 3}
+  - {fileID: 21300000, guid: 694f59607c0e544b5bc5898ba2f14a09, type: 3}
 --- !u!1 &4338927717107851597
 GameObject:
   m_ObjectHideFlags: 0

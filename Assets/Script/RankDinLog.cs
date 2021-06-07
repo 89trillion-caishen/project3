@@ -6,21 +6,24 @@ using static System.Convert;
 
 public class RankDinLog : MonoBehaviour
 {
+    private bool _isCreatePrefab=false;
     public static int countDownint;
-    [SerializeField] private GameObject BottomButton;
-    [SerializeField] private Transform ContentTransform;
+    [SerializeField] private Transform contentTransform;
     [SerializeField] private GameObject backGround;
     [SerializeField] private Text countDown;
-    [SerializeField] private GameObject openRankingView;
     [SerializeField] public GameObject userItem;
-    private bool isOpenRankingView;
-    
+
     //创建用户实体
     public void CreateUserItem()
     {
+        if (_isCreatePrefab)
+        {
+            return;
+        }
+        _isCreatePrefab = true;
         for (int i = 0; i < analyzeJsonData.UserMessageList.Count; i++)
         {
-            GameObject newGameObject = Instantiate(userItem, ContentTransform);
+            GameObject newGameObject = Instantiate(userItem, contentTransform);
             UserMeesagebuttonItem U=newGameObject.GetComponent<UserMeesagebuttonItem>();
             if (i >= 3)
             {
@@ -30,17 +33,17 @@ public class RankDinLog : MonoBehaviour
             {
                 U.EditRankingNumberImage(i + 1);
             }
-
-            U.Init(analyzeJsonData.UserMessageList[i].nickName,
-                analyzeJsonData.UserMessageList[i].trophy.ToString());
+            U.Init(i,analyzeJsonData.UserMessageList[i]._nickName,
+                analyzeJsonData.UserMessageList[i]._trophy.ToString());
         }
     }
-
-    public void closeBackGround()
+    
+    //关闭排行榜
+    public void CloseBackGround()
     {
         backGround.SetActive(false);
     }
-    public void openBackGround()
+    public void OpenBackGround()
     {
         backGround.SetActive(true);
         //生产排名预置件
@@ -50,9 +53,7 @@ public class RankDinLog : MonoBehaviour
     void Start()
     {
         updateCountDowntime();
-        //isOpenRankingView = true;
         backGround.SetActive(false);
-        
     }
 
     public int count = 0;

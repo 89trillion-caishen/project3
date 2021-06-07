@@ -1,37 +1,38 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 //绑定在排行榜userButton组建上，用于现实用户信息
 public class UserMeesagebuttonItem : MonoBehaviour
 {
-    private string nickname;
-    private string userTrophy;
+    private string _nickname;
+    private string _userTrophy;
+
+    private int i;
     //public GameObject toast;
     [SerializeField] private Text usernameText;
     [SerializeField] private Text userTrophyText;
     [SerializeField] private Text RankingNumberText;
     [SerializeField] private Image RankingNumberImage;
-    [SerializeField] private Sprite Sprite1;
-    [SerializeField] private Sprite Sprite2;
-    [SerializeField] private Sprite Sprite3;
+    [SerializeField] private Sprite[] _sprite=new Sprite[3];
+    
     //初始化个人信息，并把个人信息存到变量中
-    public void Init(string nickName,string trophy)
+    public void Init(int x,string nickName,string trophy)
     {
-        nickname = nickName;
-        userTrophy = trophy;
+        i = x;
+        _nickname = nickName;
+        _userTrophy = trophy;
         usernameText.text = nickName;
         userTrophyText.text = trophy;
     }
-    //展示弹窗
+    
+    
+    //调用单例模式的函数展示弹窗
     public void ShowToastMessageClick()
     {
-          
-        //ToastItem t = GameObject.Find("toastWindow").GetComponent<ToastItem>();
-       // t.Exit(nickname, userTrophy);
-        //GameObject.Find("toastWindows").GetComponent<脚本名>().函数名()
-        //ToastItem.Exit(nickname,userTrophy):
-        Debug.Log(userTrophy);
+        ToastItem.Instance.Exit(_nickname,_userTrophy);
+        Debug.Log(_userTrophy);
     }
     
     //展示玩家名次
@@ -45,20 +46,6 @@ public class UserMeesagebuttonItem : MonoBehaviour
     public void EditRankingNumberImage(int i)
     {
         RankingNumberText.gameObject.SetActive(false);
-        if (i == 1)
-        {
-            RankingNumberImage.sprite = Sprite1;
-        }
-
-        if (i == 2)
-        {
-            RankingNumberImage.sprite = Sprite2;
-        }
-
-        if (i == 3)
-        {
-            RankingNumberImage.sprite = Sprite3;
-        }
+        RankingNumberImage.sprite = _sprite[i-1];
     }
-
 }
