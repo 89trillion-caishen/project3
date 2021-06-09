@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3738451614595958432}
   - component: {fileID: 8221878287723671758}
   m_Layer: 5
-  m_Name: CupSum
+  m_Name: trophySum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,84 +78,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 1900
---- !u!1 &3276377427900501963
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 190674406292813819}
-  - component: {fileID: 1914458243860857713}
-  - component: {fileID: 5336640035525681629}
-  m_Layer: 5
-  m_Name: UserName
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &190674406292813819
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3276377427900501963}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8671224865079262830}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -79, y: 15}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1914458243860857713
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3276377427900501963}
-  m_CullTransparentMesh: 0
---- !u!114 &5336640035525681629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3276377427900501963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: One Of Them
 --- !u!1 &3775195864584724939
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +90,7 @@ GameObject:
   - component: {fileID: 7614243506708183609}
   - component: {fileID: 2738768244501187456}
   m_Layer: 5
-  m_Name: RFC
+  m_Name: userIdText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +108,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8671224865079262830}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -268,8 +190,8 @@ RectTransform:
   - {fileID: 3067482143628319713}
   - {fileID: 5284031547004908188}
   - {fileID: 2765052466203926190}
-  - {fileID: 190674406292813819}
   - {fileID: 7864149462773602347}
+  - {fileID: 872905631458045858}
   - {fileID: 4929441308255093976}
   - {fileID: 5215880875957308746}
   m_Father: {fileID: 0}
@@ -394,14 +316,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778ce8bd3a17b47a79b2d7d819dc9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usernameText: {fileID: 5336640035525681629}
+  userNameText: {fileID: 2819707307595805730}
   userTrophyText: {fileID: 8221878287723671758}
-  RankingNumberText: {fileID: 8429072938738611358}
-  RankingNumberImage: {fileID: 3601637832568212393}
-  _sprite:
+  userIdText: {fileID: 2738768244501187456}
+  rankingNumberText: {fileID: 8429072938738611358}
+  rankingNumberImage: {fileID: 3601637832568212393}
+  rankingTageImage: {fileID: 9089824362571168351}
+  rankSprite:
   - {fileID: 21300000, guid: 1411dedc31d4f4fd7985323245c27501, type: 3}
   - {fileID: 21300000, guid: ec26dcaa43f3f49f5ab9ffe3ae8d90cb, type: 3}
   - {fileID: 21300000, guid: 694f59607c0e544b5bc5898ba2f14a09, type: 3}
+  arenaBadge:
+  - {fileID: 21300000, guid: ad5394cb05b424d468ef00fb1cf2ab23, type: 3}
+  - {fileID: 21300000, guid: 8d1f185dfe6eb4acc89c6a026e234ed7, type: 3}
+  - {fileID: 21300000, guid: 7e6e55954aa8d4bff821419ee22fde3f, type: 3}
+  - {fileID: 21300000, guid: bff131b5332a443c8abcea9829ad0903, type: 3}
+  - {fileID: 21300000, guid: d7bd1325da63c45b4b262f288f64a01b, type: 3}
+  - {fileID: 21300000, guid: c301d80443bb84c46927613c267f1717, type: 3}
+  - {fileID: 21300000, guid: e95e60a19d4f4484dad1dbc42c9340d4, type: 3}
+  - {fileID: 21300000, guid: defa4ecd354fb42569016c77c2966798, type: 3}
+  - {fileID: 21300000, guid: 37eb1d36896aa47baadca21106b0555b, type: 3}
+  - {fileID: 21300000, guid: 6792b6f486cef43269575c6d89825556, type: 3}
+  - {fileID: 21300000, guid: f936fb71ffd4b407da8fa760928c80e0, type: 3}
+  - {fileID: 21300000, guid: f84992e6b4e904397bc4c286777f6821, type: 3}
+  - {fileID: 21300000, guid: 33aa7401c0b024cbcaef432890f1810a, type: 3}
+  - {fileID: 21300000, guid: e546fd25518ee4694a46bc8c7f768330, type: 3}
 --- !u!1 &4338927717107851597
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +353,7 @@ GameObject:
   - component: {fileID: 8052661555434237607}
   - component: {fileID: 3601637832568212393}
   m_Layer: 5
-  m_Name: RankingNumberImage
+  m_Name: rankingNumberImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,7 +427,7 @@ GameObject:
   - component: {fileID: 3162360517530820887}
   - component: {fileID: 1559635367339606725}
   m_Layer: 5
-  m_Name: CupTag
+  m_Name: trophyTag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -562,7 +501,7 @@ GameObject:
   - component: {fileID: 2223109312303371830}
   - component: {fileID: 8429072938738611358}
   m_Layer: 5
-  m_Name: RankingNumberText
+  m_Name: rankingNumberText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -640,7 +579,7 @@ GameObject:
   - component: {fileID: 7343127574929005211}
   - component: {fileID: 9089824362571168351}
   m_Layer: 5
-  m_Name: RankTag
+  m_Name: rankTag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,7 +653,7 @@ GameObject:
   - component: {fileID: 492587439817804903}
   - component: {fileID: 4558231393713868411}
   m_Layer: 5
-  m_Name: HeadImage
+  m_Name: headImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,7 +727,7 @@ GameObject:
   - component: {fileID: 2876169901194216334}
   - component: {fileID: 5712929679741193190}
   m_Layer: 5
-  m_Name: CupBackGroud
+  m_Name: trophyBackGroud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -852,3 +791,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8348613803962382245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872905631458045858}
+  - component: {fileID: 1716020015613980380}
+  - component: {fileID: 2819707307595805730}
+  m_Layer: 5
+  m_Name: userName
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &872905631458045858
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348613803962382245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8671224865079262830}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -31, y: 21}
+  m_SizeDelta: {x: 300, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1716020015613980380
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348613803962382245}
+  m_CullTransparentMesh: 0
+--- !u!114 &2819707307595805730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348613803962382245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text

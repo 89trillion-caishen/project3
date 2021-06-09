@@ -7,19 +7,23 @@ using SimpleJSON;
 //定义实体类，用来存放Json的数据
 public class UserData
 {
-    public string _nickName;
-    public int _trophy;
+    public string userId;
+    public string userName;
+    public string trophy;
 }
 //存放实体类的链表
-public class analyzeJsonData : MonoBehaviour
+public class AnalyzeJsonData : MonoBehaviour
 {
+    //静态链表
     public static List<UserData> UserMessageList;
-	public  static string _moveSpriet;
-	
-    public TextAsset txt;
+    //json文件和内容
+	public string jsonData;
+    public TextAsset jsonTxt;
+    
+    //将json文件转换成string
      void Start()
      {
-         _moveSpriet=txt.text;
+         jsonData=jsonTxt.text;
          InitTextList ();
     }
 
@@ -27,15 +31,15 @@ public class analyzeJsonData : MonoBehaviour
     public void InitTextList()
     {
         UserMessageList = new List<UserData>();
-        var n = JSONNode.Parse (_moveSpriet);
-        RankDinLog.countDownint = int.Parse(n["countDown"]);
+        var n = JSONNode.Parse (jsonData);
+        CountDown.countDownSecond = int.Parse(n["countDown"]);
         var m = n["list"];
-        Debug.Log(m.Count);
         for (int i = 0; i < m.Count; i++)
         {
             UserData userData = new UserData();
-            userData._nickName = m[i]["nickName"];
-            userData._trophy = m[i]["trophy"];
+            userData.userId=m[i]["uid"];
+            userData.userName = m[i]["nickName"];
+            userData.trophy = m[i]["trophy"];
             UserMessageList.Add(userData);
         }
     }

@@ -9,30 +9,34 @@ using UnityEngine.UI;
 public class ToastItem : MonoBehaviour
 {
     public static ToastItem Instance { get; set; }
-    public Text nickname;
-    public Text rank;
+    [SerializeField] private Text userName;
+    [SerializeField] private Text userRank;
     [SerializeField] private GameObject toastWindows;
-    
-    void Awake()
+
+    [SerializeField] private Image toastBackGroundImage;
+    private void Awake()
     {
         Instance = this;
     }
     void Start()
     {
+        toastBackGroundImage.GetComponent<Image>().raycastTarget = false;
         toastWindows.SetActive(false);
     }
     
     //激活弹窗，显示用户信息
-    public void Exit(string userNickName,string trophy)
-    { 
+    public void Exit(int i)
+    {
         toastWindows.SetActive(true);
-        nickname.text = userNickName;
-        rank.text = trophy;
+        toastBackGroundImage.GetComponent<Image>().raycastTarget = true;
+        userName.text = AnalyzeJsonData.UserMessageList[i].userId;
+        userRank.text =  AnalyzeJsonData.UserMessageList[i].trophy;
     }
     
     //关闭弹窗
     public void CloseToastItem()
     {
+        toastBackGroundImage.GetComponent<Image>().raycastTarget = false;
         toastWindows.SetActive(false);
     }
     

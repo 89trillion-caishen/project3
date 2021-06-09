@@ -6,46 +6,62 @@ using UnityEngine.UI;
 //绑定在排行榜userButton组建上，用于现实用户信息
 public class UserMeesagebuttonItem : MonoBehaviour
 {
-    private string _nickname;
-    private string _userTrophy;
-
     private int i;
-    //public GameObject toast;
-    [SerializeField] private Text usernameText;
+    [SerializeField] private Text userNameText;
     [SerializeField] private Text userTrophyText;
-    [SerializeField] private Text RankingNumberText;
-    [SerializeField] private Image RankingNumberImage;
-    [SerializeField] private Sprite[] _sprite=new Sprite[3];
+    [SerializeField] private Text userIdText;
+    [SerializeField] private Text rankingNumberText;
+    [SerializeField] private Image rankingNumberImage;
+    [SerializeField] private Image rankingTageImage;
+    [SerializeField] private Sprite[] rankSprite=new Sprite[3]; 
+    [SerializeField] private Sprite[] arenaBadge = new Sprite[14];
     
     //初始化个人信息，并把个人信息存到变量中
-    public void Init(int x,string nickName,string trophy)
+    public void Init(int x)
     {
         i = x;
-        _nickname = nickName;
-        _userTrophy = trophy;
-        usernameText.text = nickName;
-        userTrophyText.text = trophy;
+        if (i < 3)
+        {
+            rankingNumberImage.GetComponent<Image>().SetNativeSize();
+        }
+        int trophy=int.Parse(AnalyzeJsonData.UserMessageList[i].trophy);
+        rankingTageImage.sprite = arenaBadge[trophy/1000+1];
+        userNameText.text = AnalyzeJsonData.UserMessageList[i].userName;
+        userTrophyText.text = AnalyzeJsonData.UserMessageList[i].trophy;
+        userIdText.text = AnalyzeJsonData.UserMessageList[i].userId;
     }
     
+    // //动态获取段位图片
+    // private void Awake()
+    // {
+    //     for (int i = 0; i < rankSprite.Length; i++)
+    //     {
+    //         rankSprite[i] = Resources.Load<Sprite>("rank_1");
+    //         Debug.Log(rankSprite[i]);
+    //     }
+    //     for (int i = 0; i < arenaBadge.Length; i++)
+    //     {
+    //         arenaBadge[i] = Resources.Load("Resources/arenaBadge_"+(i+1).ToString()) as Sprite; 
+    //     }
+    // }
     
     //调用单例模式的函数展示弹窗
     public void ShowToastMessageClick()
     {
-        ToastItem.Instance.Exit(_nickname,_userTrophy);
-        Debug.Log(_userTrophy);
+        ToastItem.Instance.Exit(i);
     }
     
     //展示玩家名次
     public void EditRankingNumberText(int i)
     {
-        RankingNumberImage.gameObject.SetActive(false);
-        RankingNumberText.text = i.ToString();
+        rankingNumberImage.gameObject.SetActive(false);
+        rankingNumberText.text = i.ToString();
     }
     
     //展示玩家名次
     public void EditRankingNumberImage(int i)
     {
-        RankingNumberText.gameObject.SetActive(false);
-        RankingNumberImage.sprite = _sprite[i-1];
+        rankingNumberText.gameObject.SetActive(false);
+        rankingNumberImage.sprite = rankSprite[i-1];
     }
 }
