@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 2470640130957835872}
   - component: {fileID: 8064153732142495380}
   - component: {fileID: 6512978310256626568}
-  - component: {fileID: 9188640894721932697}
+  - component: {fileID: 7113023904601102261}
   m_Layer: 5
   m_Name: ItemButton 1
   m_TagString: Untagged
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9188640894721932697}
+      - m_Target: {fileID: 7113023904601102261}
         m_MethodName: ShowToastMessageClick
         m_Mode: 1
         m_Arguments:
@@ -304,7 +304,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9188640894721932697
+--- !u!114 &7113023904601102261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,24 +323,24 @@ MonoBehaviour:
   rankingNumberImage: {fileID: 3601637832568212393}
   rankingTageImage: {fileID: 9089824362571168351}
   rankSprite:
-  - {fileID: 21300000, guid: 1411dedc31d4f4fd7985323245c27501, type: 3}
-  - {fileID: 21300000, guid: ec26dcaa43f3f49f5ab9ffe3ae8d90cb, type: 3}
-  - {fileID: 21300000, guid: 694f59607c0e544b5bc5898ba2f14a09, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   arenaBadge:
-  - {fileID: 21300000, guid: ad5394cb05b424d468ef00fb1cf2ab23, type: 3}
-  - {fileID: 21300000, guid: 8d1f185dfe6eb4acc89c6a026e234ed7, type: 3}
-  - {fileID: 21300000, guid: 7e6e55954aa8d4bff821419ee22fde3f, type: 3}
-  - {fileID: 21300000, guid: bff131b5332a443c8abcea9829ad0903, type: 3}
-  - {fileID: 21300000, guid: d7bd1325da63c45b4b262f288f64a01b, type: 3}
-  - {fileID: 21300000, guid: c301d80443bb84c46927613c267f1717, type: 3}
-  - {fileID: 21300000, guid: e95e60a19d4f4484dad1dbc42c9340d4, type: 3}
-  - {fileID: 21300000, guid: defa4ecd354fb42569016c77c2966798, type: 3}
-  - {fileID: 21300000, guid: 37eb1d36896aa47baadca21106b0555b, type: 3}
-  - {fileID: 21300000, guid: 6792b6f486cef43269575c6d89825556, type: 3}
-  - {fileID: 21300000, guid: f936fb71ffd4b407da8fa760928c80e0, type: 3}
-  - {fileID: 21300000, guid: f84992e6b4e904397bc4c286777f6821, type: 3}
-  - {fileID: 21300000, guid: 33aa7401c0b024cbcaef432890f1810a, type: 3}
-  - {fileID: 21300000, guid: e546fd25518ee4694a46bc8c7f768330, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4338927717107851597
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class UserData
 {
     public string userId;
     public string userName;
-    public string trophy;
+    public int trophy;
 }
 //存放实体类的链表
 public class AnalyzeJsonData : MonoBehaviour
@@ -42,6 +42,7 @@ public class AnalyzeJsonData : MonoBehaviour
             userData.trophy = m[i]["trophy"];
             UserMessageList.Add(userData);
         }
+        UserMessageList.Sort((x,y) =>y.trophy - x.trophy);
     }
 }
 

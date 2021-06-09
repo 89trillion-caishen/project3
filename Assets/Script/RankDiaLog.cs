@@ -49,7 +49,7 @@ public class RankDiaLog : MonoBehaviour
     {
         no1UserId.text = AnalyzeJsonData.UserMessageList[0].userId;
         no1NameText.text = AnalyzeJsonData.UserMessageList[0].userName;
-        no1TrophySumText.text = AnalyzeJsonData.UserMessageList[0].trophy;
+        no1TrophySumText.text = AnalyzeJsonData.UserMessageList[0].trophy.ToString();
     }
 
 

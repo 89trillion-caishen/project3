@@ -30,7 +30,7 @@ public class ToastItem : MonoBehaviour
         toastWindows.SetActive(true);
         toastBackGroundImage.GetComponent<Image>().raycastTarget = true;
         userName.text = AnalyzeJsonData.UserMessageList[i].userId;
-        userRank.text =  AnalyzeJsonData.UserMessageList[i].trophy;
+        userRank.text =  AnalyzeJsonData.UserMessageList[i].trophy.ToString();
     }
     
     //关闭弹窗

@@ -24,26 +24,26 @@ public class UserMeesagebuttonItem : MonoBehaviour
         {
             rankingNumberImage.GetComponent<Image>().SetNativeSize();
         }
-        int trophy=int.Parse(AnalyzeJsonData.UserMessageList[i].trophy);
+        int trophy=int.Parse(AnalyzeJsonData.UserMessageList[i].trophy.ToString());
         rankingTageImage.sprite = arenaBadge[trophy/1000+1];
         userNameText.text = AnalyzeJsonData.UserMessageList[i].userName;
-        userTrophyText.text = AnalyzeJsonData.UserMessageList[i].trophy;
+        userTrophyText.text = AnalyzeJsonData.UserMessageList[i].trophy.ToString();
         userIdText.text = AnalyzeJsonData.UserMessageList[i].userId;
     }
     
-    // //动态获取段位图片
-    // private void Awake()
-    // {
-    //     for (int i = 0; i < rankSprite.Length; i++)
-    //     {
-    //         rankSprite[i] = Resources.Load<Sprite>("rank_1");
-    //         Debug.Log(rankSprite[i]);
-    //     }
-    //     for (int i = 0; i < arenaBadge.Length; i++)
-    //     {
-    //         arenaBadge[i] = Resources.Load("Resources/arenaBadge_"+(i+1).ToString()) as Sprite; 
-    //     }
-    // }
+    //动态获取段位图片
+    private void Awake()
+    {
+        for (int i = 0; i < rankSprite.Length; i++)
+        {
+            rankSprite[i] = Resources.Load<Sprite>("rank_"+(i+1).ToString());
+            Debug.Log(rankSprite[i]);
+        }
+        for (int i = 0; i < arenaBadge.Length; i++)
+        {
+            arenaBadge[i] = Resources.Load<Sprite>("arenaBadge_"+(i+1).ToString()); 
+        }
+    }
     
     //调用单例模式的函数展示弹窗
     public void ShowToastMessageClick()
