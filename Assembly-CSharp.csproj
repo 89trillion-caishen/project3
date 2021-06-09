@@ -58,8 +58,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Recyclable Scroll Rect\Demo\Scripts\DemoCell.cs" />
-     <Compile Include="Assets\Recyclable Scroll Rect\Demo\Scripts\RecyclableScrollerDemo.cs" />
      <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\Interfaces\ICell.cs" />
      <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\Interfaces\IRecyclableScrollRectDataSource.cs" />
      <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\RecyclableScrollRect.cs" />
@@ -69,8 +67,10 @@
      <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\Utils\UIExtension.cs" />
      <Compile Include="Assets\Scripts\AnalyzeJsonData.cs" />
      <Compile Include="Assets\Scripts\CountDown.cs" />
+     <Compile Include="Assets\Scripts\DemoCell.cs" />
      <Compile Include="Assets\Scripts\RankDiaLog.cs" />
      <Compile Include="Assets\Scripts\RankUIManeger.cs" />
+     <Compile Include="Assets\Scripts\RecyclableScrollerDemo.cs" />
      <Compile Include="Assets\Scripts\ToastItem.cs" />
      <Compile Include="Assets\Scripts\UserMeesagebuttonItem.cs" />
  <Reference Include="Unity.Timeline.Editor">
