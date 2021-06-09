@@ -1,1 +1,0 @@
-# Optimized-ScrollView-Adapter

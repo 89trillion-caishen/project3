@@ -618,16 +618,6 @@
  <HintPath>/Applications/Unity/Hub/Editor/2019.4.16f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
  </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="OSA-Editor.csproj">
-      <Project>{73114B08-6191-9815-662B-DA10B86E3AA3}</Project>
-      <Name>OSA-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.csproj">
-      <Project>{7917E845-6C2C-3B86-A87F-2ED293A41F78}</Project>
-      <Name>OSA</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

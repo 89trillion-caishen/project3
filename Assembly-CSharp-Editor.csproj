@@ -58,8 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ReuseScroller\Editor\BaseCellEditor.cs" />
-     <Compile Include="Assets\ReuseScroller\Editor\BaseControllerEditor.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Main\Editor\RecyclableScrollRectEditor.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Main\Editor\RecyclableScrollViewEditorTool.cs" />
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>/Users/caishen/git_code/project3/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
@@ -651,14 +651,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{35D3394D-C0A5-1C00-AAE7-AC523E8D7D28}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA-Editor.csproj">
-      <Project>{73114B08-6191-9815-662B-DA10B86E3AA3}</Project>
-      <Name>OSA-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.csproj">
-      <Project>{7917E845-6C2C-3B86-A87F-2ED293A41F78}</Project>
-      <Name>OSA</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

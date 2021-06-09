@@ -58,22 +58,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\AnalyzeJsonData.cs" />
-     <Compile Include="Assets\Script\CountDown.cs" />
-     <Compile Include="Assets\Script\RankDiaLog.cs" />
-     <Compile Include="Assets\Script\ToastItem.cs" />
-     <Compile Include="Assets\Script\UserMeesagebuttonItem.cs" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\ExternalResources\Packer2DBox\About.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\Extra\PluginSupport\TMPro\TMPro instructions.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\Extra\PluginSupport\Playmaker\README.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\Resources\Com.TheFallenGames\OSA\Templates\Scripts\BasicTableAdapter.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\Resources\Com.TheFallenGames\OSA\Templates\ScriptsChunks\HeaderComment.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\ProjectSettings\ProjectVersion.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\Extra\README.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\Resources\Com.TheFallenGames\OSA\Templates\Scripts\BasicListAdapter.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\Resources\Com.TheFallenGames\OSA\Templates\Scripts\BasicGridAdapter.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\ExternalResources\Packer2DBox\Packer2DBoxLICENSE.txt" />
-     <None Include="Assets\Optimized-ScrollView-Adapter-main\Assets\Plugins\Com.TheFallenGames\OSA\Docs\Manual link.txt" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Demo\Scripts\DemoCell.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Demo\Scripts\RecyclableScrollerDemo.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\Interfaces\ICell.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\Interfaces\IRecyclableScrollRectDataSource.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\RecyclableScrollRect.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\Recycling System\HorizontalRecyclingSystem.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\Recycling System\RecyclingSystem.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\Recycling System\VerticalRecyclingSystem.cs" />
+     <Compile Include="Assets\Recyclable Scroll Rect\Main\Scripts\Utils\UIExtension.cs" />
+     <Compile Include="Assets\Scripts\AnalyzeJsonData.cs" />
+     <Compile Include="Assets\Scripts\CountDown.cs" />
+     <Compile Include="Assets\Scripts\RankDiaLog.cs" />
+     <Compile Include="Assets\Scripts\RankUIManeger.cs" />
+     <Compile Include="Assets\Scripts\ToastItem.cs" />
+     <Compile Include="Assets\Scripts\UserMeesagebuttonItem.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/caishen/git_code/project3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -634,14 +633,6 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{CF0253AA-8604-71BB-1324-B172C205110B}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA-Editor.csproj">
-      <Project>{73114B08-6191-9815-662B-DA10B86E3AA3}</Project>
-      <Name>OSA-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="OSA.csproj">
-      <Project>{7917E845-6C2C-3B86-A87F-2ED293A41F78}</Project>
-      <Name>OSA</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
