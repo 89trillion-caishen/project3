@@ -8,12 +8,10 @@ public class CountDown : MonoBehaviour
 {
     public static int countDownSecond=835503;
     public Text countDownText;
-
     void Start()
     {
         CountDownTime(); 
     }
-
     public void CountDownTime()
     {
         int _day = (int) countDownSecond / 86400;

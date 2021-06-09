@@ -74,15 +74,4 @@ public class RankDiaLog : MonoBehaviour
     {
         transform.gameObject.SetActive(false);
     }
-    
-    void Update()
-    {
-        
-    }
-    
-    //倒计时函数
-    public void UpdateCountDowntime()
-    {
-        
-    }
 }
