@@ -2,13 +2,6 @@
 using UnityEngine;
 using PolyAndCode.UI;
 
-/// <summary>
-/// Demo controller class for Recyclable Scroll Rect. 
-/// A controller class is responsible for providing the scroll rect with datasource. Any class can be a controller class. 
-/// The only requirement is to inherit from IRecyclableScrollRectDataSource and implement the interface methods
-/// </summary>
-
-//Dummy Data model for demostraion
 public struct ContactInfo
 {
     public string Name;
@@ -66,6 +59,7 @@ public class RecyclableScrollerDemo : MonoBehaviour, IRecyclableScrollRectDataSo
     /// </summary>
     public void SetCell(ICell cell, int index)
     {
+        
         //Casting to the implemented Cell
         var item = cell as DemoCell;
         item.ConfigureCell(_contactList[index], index);

@@ -2,16 +2,8 @@
 using UnityEngine.UI;
 using PolyAndCode.UI;
 
-//Cell class for demo. A cell in Recyclable Scroll Rect must have a cell class inheriting from ICell.
-//The class is required to configure the cell(updating UI elements etc) according to the data during recycling of cells.
-//The configuration of a cell is done through the DataSource SetCellData method.
-//Check RecyclableScrollerDemo class
 public class DemoCell : MonoBehaviour, ICell
 {
-    //UI
-    // public Text nameLabel;
-    // public Text genderLabel;
-    // public Text idLabel;
     public Text userName;
     public Text userId;
     [SerializeField] private Text userNameText;
@@ -49,19 +41,8 @@ public class DemoCell : MonoBehaviour, ICell
     {
         if (cellIndex > AnalyzeJsonData.UserMessageList.Count-1) return;
         i = cellIndex;
-        //_contactInfo = contactInfo;
-        // if (i < 3)
-        // {
-        //     rankingNumberText.gameObject.SetActive(false);
-        //     rankingNumberImage.sprite = rankSprite[i];
-        //     //rankingNumberImage.GetComponent<Image>().SetNativeSize();
-        // }
-        // else
-        // {
-        //}
-            rankingNumberImage.gameObject.SetActive(false);
-            rankingNumberText.text = (i+1).ToString();
-        
+        rankingNumberImage.gameObject.SetActive(false);
+        rankingNumberText.text = (i+1).ToString();
         int trophy=int.Parse(AnalyzeJsonData.UserMessageList[i].trophy.ToString());
         rankingTageImage.sprite = arenaBadge[trophy/1000+1];
         userName.text = AnalyzeJsonData.UserMessageList[cellIndex].userName;

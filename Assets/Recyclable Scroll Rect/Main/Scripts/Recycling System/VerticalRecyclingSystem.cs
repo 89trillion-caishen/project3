@@ -165,7 +165,7 @@ namespace PolyAndCode.UI
 
                 //Setting data for Cell
                 _cachedCells.Add(item.GetComponent<ICell>());
-                if (poolSize >= AnalyzeJsonData.UserMessageList.Count) return;
+               //if (poolSize >= AnalyzeJsonData.UserMessageList.Count-1) return;
                 DataSource.SetCell(_cachedCells[_cachedCells.Count - 1], poolSize);
 
                 //Update the Pool size
@@ -217,7 +217,6 @@ namespace PolyAndCode.UI
         private Vector2 RecycleTopToBottom()
         {
             _recycling = true;
-
             int n = 0;
             float posY = IsGrid ? _cellPool[bottomMostCellIndex].anchoredPosition.y : 0;
             float posX = 0;
@@ -255,7 +254,7 @@ namespace PolyAndCode.UI
                 }
 
                 //Cell for row at
-                if (currentItemCount >= AnalyzeJsonData.UserMessageList.Count) continue;
+                if (currentItemCount >= AnalyzeJsonData.UserMessageList.Count - 2) currentItemCount=0;
                 DataSource.SetCell(_cachedCells[topMostCellIndex], currentItemCount);
 
                 //set new indices
@@ -333,6 +332,7 @@ namespace PolyAndCode.UI
                 currentItemCount--;
 
                 //Cell for row at
+                if (currentItemCount >= AnalyzeJsonData.UserMessageList.Count-2) break;
                 DataSource.SetCell(_cachedCells[bottomMostCellIndex], currentItemCount - _cellPool.Count);
 
                 //set new indices
