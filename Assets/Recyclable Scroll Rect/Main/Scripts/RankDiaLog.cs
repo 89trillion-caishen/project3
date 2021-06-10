@@ -39,7 +39,7 @@ public class RankDiaLog : MonoBehaviour
             {
                 U.EditRankingNumberImage(i + 1);
             }
-            U.Init(i);
+            U.Init(AnalyzeJsonData.UserMessageList[i],i);
         }
     }
     

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 //绑定在排行榜userButton组建上，用于现实用户信息
 public class UserMeesagebuttonItem : MonoBehaviour
 {
-    private int i;
+    private UserData userData;
     [SerializeField] private Text userNameText;
     [SerializeField] private Text userTrophyText;
     [SerializeField] private Text userIdText;
@@ -17,18 +17,18 @@ public class UserMeesagebuttonItem : MonoBehaviour
     [SerializeField] private Sprite[] arenaBadge = new Sprite[14];
     
     //初始化个人信息，并把个人信息存到变量中
-    public void Init(int x)
+    public void Init(UserData userData,int index)
     {
-        i = x;
-        if (i < 3)
+        this.userData = userData;
+        if (index < 3)
         {
             rankingNumberImage.GetComponent<Image>().SetNativeSize();
         }
-        int trophy=int.Parse(AnalyzeJsonData.UserMessageList[i].trophy.ToString());
+        int trophy=int.Parse(AnalyzeJsonData.UserMessageList[index].trophy.ToString());
         rankingTageImage.sprite = arenaBadge[trophy/1000+1];
-        userNameText.text = AnalyzeJsonData.UserMessageList[i].userName;
-        userTrophyText.text = AnalyzeJsonData.UserMessageList[i].trophy.ToString();
-        userIdText.text = AnalyzeJsonData.UserMessageList[i].userId;
+        userNameText.text = AnalyzeJsonData.UserMessageList[index].userName;
+        userTrophyText.text = AnalyzeJsonData.UserMessageList[index].trophy.ToString();
+        userIdText.text = AnalyzeJsonData.UserMessageList[index].userId;
     }
     
     //动态获取段位图片
@@ -48,7 +48,7 @@ public class UserMeesagebuttonItem : MonoBehaviour
     //调用单例模式的函数展示弹窗
     public void ShowToastMessageClick()
     {
-        ToastItem.Instance.Exit(i);
+        ToastItem.Instance.Exit(userData);
     }
     
     //展示玩家名次

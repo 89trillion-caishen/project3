@@ -24,16 +24,21 @@ public class ToastItem : MonoBehaviour
         toastWindows.SetActive(false);
     }
     
-    //激活弹窗，显示用户信息
-    public void Exit(int i)
+    /// <summary>
+    /// 激活弹窗，显示用户信息
+    /// </summary>
+    /// <param name="i"></param>
+    public void Exit(UserData userData)
     {
         toastWindows.SetActive(true);
         toastBackGroundImage.GetComponent<Image>().raycastTarget = true;
-        userName.text = AnalyzeJsonData.UserMessageList[i].userId;
-        userRank.text =  AnalyzeJsonData.UserMessageList[i].trophy.ToString();
+        userName.text = userData.userId;
+        userRank.text =  userData.trophy.ToString();
     }
     
-    //关闭弹窗
+    /// <summary>
+    /// 关闭弹窗
+    /// </summary>
     public void CloseToastItem()
     {
         toastBackGroundImage.GetComponent<Image>().raycastTarget = false;

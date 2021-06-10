@@ -6,12 +6,15 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
-    public static int countDownSecond=835503;
+    public static int countDownSecond;
     public Text countDownText;
     void Start()
     {
         CountDownTime(); 
     }
+    /// <summary>
+    /// 使用Invoke()实现倒计时
+    /// </summary>
     public void CountDownTime()
     {
         int _day = (int) countDownSecond / 86400;

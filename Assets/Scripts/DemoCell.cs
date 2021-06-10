@@ -4,8 +4,8 @@ using PolyAndCode.UI;
 
 public class DemoCell : MonoBehaviour, ICell
 {
-    public Text userName;
-    public Text userId;
+    [SerializeField] private Text userName;
+    [SerializeField] private Text userId;
     [SerializeField] private Text userNameText;
     [SerializeField] private Text userTrophyText;
     [SerializeField] private Text userIdText;
@@ -17,8 +17,11 @@ public class DemoCell : MonoBehaviour, ICell
     [SerializeField] private Sprite[] arenaBadge = new Sprite[14];
     //Model
     private ContactInfo _contactInfo;
-    private int i;
+    private UserData userData;
     
+    /// <summary>
+    /// 动态加载资源
+    /// </summary>
     private void Awake()
     {
         for (int i = 0; i < rankSprite.Length; i++)
@@ -30,27 +33,34 @@ public class DemoCell : MonoBehaviour, ICell
             arenaBadge[i] = Resources.Load<Sprite>("arenaBadge_"+(i+1).ToString()); 
         }
     }
+    /// <summary>
+    /// 监听点击事件
+    /// </summary>
     private void Start()
     {
-        //Can also be done in the inspector
         GetComponent<Button>().onClick.AddListener(ShowToastMessageClick);
     }
-
-    //This is called from the SetCell method in DataSource
-    public void ConfigureCell(ContactInfo contactInfo,int cellIndex)
+    /// <summary>
+    /// 对生成的排名榜进行赋初值
+    /// 根据杯数更改段位图片
+    /// </summary>
+    /// <param name="cellIndex"></param>
+    public void RankInit(UserData userData,int cellIndex)
     {
-        if (cellIndex > AnalyzeJsonData.UserMessageList.Count-1) return;
-        i = cellIndex;
+        this.userData = userData;
         rankingNumberImage.gameObject.SetActive(false);
-        rankingNumberText.text = (i+1).ToString();
-        int trophy=int.Parse(AnalyzeJsonData.UserMessageList[i].trophy.ToString());
-        rankingTageImage.sprite = arenaBadge[trophy/1000+1];
-        userName.text = AnalyzeJsonData.UserMessageList[cellIndex].userName;
-        userId.text = AnalyzeJsonData.UserMessageList[cellIndex].userId;
-        userTrophyText.text = AnalyzeJsonData.UserMessageList[cellIndex].trophy.ToString();
+        rankingNumberText.text = (cellIndex+1).ToString();
+        rankingTageImage.sprite = arenaBadge[(int.Parse(userData.trophy.ToString()))/1000+1];
+        userName.text = userData.userName;
+        userId.text = userData.userId;
+        userTrophyText.text = userData.trophy.ToString();
     }
+    
+    /// <summary>
+    /// 点击user展示Toast，toast展示用户的信息
+    /// </summary>
     public void ShowToastMessageClick()
     {
-        ToastItem.Instance.Exit(i);
+        ToastItem.Instance.Exit(userData);
     }
 }
